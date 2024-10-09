@@ -1,8 +1,11 @@
 import Link from "next/link";
 import H3 from "@/components/ui/typography/h3";
 import { faFacebook, faInstagram } from "@fortawesome/free-brands-svg-icons";
-import FontAwesome from "@/components/ui/fontAwesome/fontAwesome";
+import FontAwesome from "@/components/ui/font-awesome/font-awesome";
 import Container from "../ui/container/container";
+import { Separator } from "../ui/separator";
+import { LoginFormModal } from "@/features/login/login-form-modal";
+import { RegisterFormModal } from "@/features/register/register-form-modal";
 
 export default function Footer() {
   const currentDate = new Date();
@@ -12,12 +15,14 @@ export default function Footer() {
         <div className="flex flex-wrap gap-4 justify-between">
           <div className="flex flex-col gap-3">
             <H3 className="text-white">Mon compte</H3>
-            <Link className="text-gray-300 text-sm" href="#">
-              Me connecter
-            </Link>
-            <Link className="text-gray-300 text-sm" href="#">
-              Créer un compte
-            </Link>
+            <LoginFormModal
+              buttonVariant="link"
+              className="text-gray-300 p-0 max-w-min h-fit"
+            />
+            <RegisterFormModal
+              buttonVariant="link"
+              className="text-gray-300 p-0 max-w-min h-fit"
+            />
           </div>
           <div className="flex flex-col gap-3">
             <H3 className="text-white">Matchi</H3>
@@ -50,7 +55,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <hr className="border-b-none border-gray-700" />
+        <Separator className="bg-gray-700" />
 
         <div className="flex flex-wrap gap-4 sm:gap-8">
           <p className="text-center text-gray-300">

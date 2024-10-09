@@ -1,7 +1,7 @@
 "use client";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { FontAwesomeProps } from "./fontAwsome.type";
+import { FontAwesomeProps } from "./font-awesome.type";
 
 export default function FontAwesome({
   icon,

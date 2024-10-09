@@ -1,8 +1,9 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
-import { useBreakpoints } from "@/hooks/useBreakpoints";
+import { useBreakpoints } from "@/hooks/use-breakpoints";
 import Link from "next/link";
+import { LoginFormModal } from "@/features/login/login-form-modal";
+import { RegisterFormModal } from "@/features/register/register-form-modal";
 
 const Navbar = () => {
   const screenSize = useBreakpoints();
@@ -66,21 +67,16 @@ const Navbar = () => {
       </SheetContent>
     </Sheet>
     */}
-      <div className="flex w-full items-center gap-4 md:ml-auto md:gap-2 lg:gap-4">
+      <div className="flex w-full items-center gap-2 md:ml-auto md:gap-2 lg:gap-4">
         <div className="ml-auto text-xs md:text-sm">
-          <Link href="#" className="hover:text-foreground">
-            Me connecter
-          </Link>
+          <LoginFormModal />
         </div>
-        <Link href="">
-          <Button
-            type="submit"
-            size={screenSize.isMobile ? "sm" : "default"}
-            className="text-xs md:text-sm"
-          >
-            Créer un compte
-          </Button>
-        </Link>
+        <RegisterFormModal
+          buttonVariant="default"
+          buttonSize={screenSize.isMobile ? "sm" : "default"}
+          className="text-xs md:text-sm px-2 sm:px-4"
+        />
+
         {/* 
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
