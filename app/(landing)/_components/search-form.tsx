@@ -2,7 +2,8 @@
 
 import { zodResolver } from '@hookform/resolvers/zod'
 import { format } from 'date-fns'
-import { CalendarIcon } from 'lucide-react'
+
+import { faCalendar } from '@fortawesome/free-regular-svg-icons'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 
@@ -34,6 +35,7 @@ import { MESSAGES } from '@/const/message'
 import { useRouter } from 'next/navigation'
 import { ROUTES } from '@/routes'
 import { slugifyString } from '@/lib/string'
+import FontAwesome from '@/components/ui/font-awesome/font-awesome'
 
 const formSchema = z.object({
   activity: z.string({
@@ -155,7 +157,10 @@ export function SearchForm() {
                           ) : (
                             <span>Choisir une date</span>
                           )}
-                          <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
+                          <FontAwesome
+                            icon={faCalendar}
+                            className="ml-auto h-4 w-4 opacity-50"
+                          />
                         </Button>
                       </FormControl>
                     </PopoverTrigger>
@@ -174,7 +179,9 @@ export function SearchForm() {
                 </FormItem>
               )}
             />
-            <Button type="submit">Submit</Button>
+            <Button type="submit" className="w-full md:w-auto">
+              Rechercher
+            </Button>
           </form>
         </Form>
       </CardContent>

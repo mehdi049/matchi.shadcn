@@ -1,14 +1,14 @@
-import Link from "next/link";
-import H3 from "@/components/ui/typography/h3";
-import { faFacebook, faInstagram } from "@fortawesome/free-brands-svg-icons";
-import FontAwesome from "@/components/ui/font-awesome/font-awesome";
-import Container from "../ui/container/container";
-import { Separator } from "../ui/separator";
-import { LoginFormModal } from "@/features/login/login-form-modal";
-import { RegisterFormModal } from "@/features/register/register-form-modal";
+import Link from 'next/link'
+import H3 from '@/components/ui/typography/h3'
+import { faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons'
+import FontAwesome from '@/components/ui/font-awesome/font-awesome'
+import Container from '../ui/container/container'
+import { Separator } from '../ui/separator'
+import { LoginFormModal } from '@/features/login/login-form-modal'
+import { RegisterFormModal } from '@/features/register/register-form-modal'
 
 export default function Footer() {
-  const currentDate = new Date();
+  const currentDate = new Date()
   return (
     <footer className="bg-black py-8 mt-8">
       <Container className="flex flex-wrap flex-col gap-4 sm:gap-8">
@@ -76,5 +76,5 @@ export default function Footer() {
         </div>
       </Container>
     </footer>
-  );
+  )
 }
