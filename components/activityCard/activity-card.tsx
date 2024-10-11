@@ -83,19 +83,6 @@ export default function ActivityCard({
           </Link>
         </p>
       </CardContent>
-      {/*}
-      <Separator />
-      
-      <CardFooter className="flex gap-2 items-center justify-start py-2 px-4">
-        <div>
-          <AvatarComponent src="https://github.com/shadcn.png" fallback="CN" />
-        </div>
-        <div className="flex flex-col">
-          <p className="text-sm">Mehdi Marouani</p>
-          <p className="text-xs text-muted-foreground">Organisateur</p>
-        </div>
-      </CardFooter>
-      */}
     </Card>
   )
 }
