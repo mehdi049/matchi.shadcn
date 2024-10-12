@@ -188,7 +188,7 @@ export async function PUT(
         { status: StatusCodes.NOT_FOUND }
       )
 
-    const updatedActivity = await prisma.addedActivity.update({
+    /*const updatedActivity =*/ await prisma.addedActivity.update({
       where: {
         id: parseInt(id),
       },

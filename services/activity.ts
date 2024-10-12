@@ -1,5 +1,5 @@
-import { API_ROUTES } from '@/const/api_routes'
-import { AddedActivityUpdateStatus } from '@/hooks/activity/useUpdateActivity'
+import { API_ROUTES } from '@/const/api-routes'
+//import { AddedActivityUpdateStatus } from '@/hooks/activity/useUpdateActivity'
 import { fetcher, fetcherGet } from '@/lib/fetcher'
 import { AddedActivityResponse } from '@/types/AddedActivityResponse'
 
@@ -13,7 +13,7 @@ export const addActivity = (activity: AddedActivityResponse) => {
 
 export const updateActivity = (
   id: number,
-  activity: AddedActivityResponse | AddedActivityUpdateStatus
+  activity: AddedActivityResponse /*| AddedActivityUpdateStatus*/
 ) => {
   return fetcher<string>({
     url: API_ROUTES.ACTIVITY.GET_BY_ID(id),

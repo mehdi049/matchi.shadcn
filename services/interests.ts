@@ -1,4 +1,4 @@
-import { API_ROUTES } from '@/const/api_routes'
+import { API_ROUTES } from '@/const/api-routes'
 import { fetcherGet } from '@/lib/fetcher'
 import { ActivityResponse } from '@/types/ActivityResponse'
 

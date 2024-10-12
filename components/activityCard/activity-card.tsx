@@ -1,19 +1,7 @@
-import { cn } from '@/lib/utils'
-import { Button } from '../ui/button'
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from '../ui/card'
-import { ActivityCardProps } from './activity-card.type'
+import { Card, CardContent, CardHeader } from '../ui/card'
+//import { ActivityCardProps } from './activity-card.type'
 import Image from 'next/image'
-import { AvatarComponent } from '../ui/avatar'
-import H2 from '../ui/typography/h2'
 import H3 from '../ui/typography/h3'
-import { Separator } from '../ui/separator'
 import {
   faCalendar,
   faCircleCheck,
@@ -25,15 +13,14 @@ import FontAwesome from '../ui/font-awesome/font-awesome'
 import Link from 'next/link'
 import { Badge } from '../ui/badge'
 
-export default function ActivityCard({
+export default function ActivityCard(/*{
   activity,
   hosting,
   attending,
   requestStatus,
   displayFooter,
   display = 'full',
-}: ActivityCardProps) {
-  const aspectRatio = 'aspect-square'
+}: ActivityCardProps*/) {
   return (
     <Card>
       <CardHeader className="p-0">

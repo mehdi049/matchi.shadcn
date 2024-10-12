@@ -32,9 +32,7 @@ import {
   SelectTrigger,
 } from '@/components/ui/select'
 import { MESSAGES } from '@/const/message'
-import { useRouter } from 'next/navigation'
-import { ROUTES } from '@/routes'
-import { slugifyString } from '@/lib/string'
+//import { useRouter } from 'next/navigation'
 import FontAwesome from '@/components/ui/font-awesome/font-awesome'
 
 const formSchema = z.object({
@@ -48,12 +46,12 @@ const formSchema = z.object({
 })
 
 export function SearchForm() {
-  const router = useRouter()
+  //const router = useRouter()
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
   })
 
-  function onSubmit(formData: z.infer<typeof formSchema>) {
+  function onSubmit(/*formData: z.infer<typeof formSchema>*/) {
     /*return router.push(
       ROUTES.ACTIVITIES_SEARCH(
         formData.city ? (slugifyString(formData.city) as string) : 'all',

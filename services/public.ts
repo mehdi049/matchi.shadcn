@@ -1,4 +1,4 @@
-import { API_ROUTES } from '@/const/api_routes'
+import { API_ROUTES } from '@/const/api-routes'
 import { fetcher } from '@/lib/fetcher'
 import { User } from 'next-auth'
 
