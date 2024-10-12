@@ -50,11 +50,16 @@ AvatarFallback.displayName = AvatarPrimitive.Fallback.displayName
 type AvatarComponentProps = {
   src: string
   fallback?: string
+  className?: string
 }
-const AvatarComponent = ({ src, fallback }: AvatarComponentProps) => {
+const AvatarComponent = ({
+  src,
+  fallback,
+  className,
+}: AvatarComponentProps) => {
   return (
-    <Avatar>
-      <AvatarImage src={src} />
+    <Avatar className={className}>
+      <AvatarImage src={src} alt={fallback ?? ''} />
       {fallback && <AvatarFallback>{fallback}</AvatarFallback>}
     </Avatar>
   )

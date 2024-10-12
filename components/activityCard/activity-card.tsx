@@ -1,3 +1,5 @@
+'use client'
+
 import { Card, CardContent, CardHeader } from '../ui/card'
 //import { ActivityCardProps } from './activity-card.type'
 import Image from 'next/image'
@@ -8,10 +10,11 @@ import {
   faCompass,
   faMoneyBill1,
 } from '@fortawesome/free-regular-svg-icons'
-import { faLock } from '@fortawesome/free-solid-svg-icons'
 import FontAwesome from '../ui/font-awesome/font-awesome'
 import Link from 'next/link'
-import { Badge } from '../ui/badge'
+import { useRouter } from 'next/navigation'
+import { ROUTES } from '@/routes'
+import PrivateActivityBadge from '../badge/private-activty-badge'
 
 export default function ActivityCard(/*{
   activity,
@@ -21,8 +24,12 @@ export default function ActivityCard(/*{
   displayFooter,
   display = 'full',
 }: ActivityCardProps*/) {
+  const router = useRouter()
   return (
-    <Card>
+    <Card
+      onClick={() => router.push(ROUTES.ACTIVITY(1))}
+      className="cursor-pointer"
+    >
       <CardHeader className="p-0">
         <Image
           src={
@@ -39,12 +46,7 @@ export default function ActivityCard(/*{
           <H3 className="font-semibold">
             Sidi Bouzid, acidus adeptio repellat
           </H3>
-          <Badge
-            variant="secondary"
-            className="flex gap-2 items-center max-w-min"
-          >
-            <FontAwesome icon={faLock} /> Privé
-          </Badge>
+          <PrivateActivityBadge />
         </div>
 
         <p className="text-sm pt-2 flex gap-2 items-center">
