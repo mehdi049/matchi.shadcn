@@ -1,6 +1,6 @@
-import { AddedActivityResponseSm } from './AddedActivityResponse'
-import { UserAttendanceResponse } from './UserAttendanceResponse'
-import { UserInterestResponse } from './UserInterestResponse'
+import { AddedActivityResponseSm } from './added-activity-response.type'
+import { UserAttendanceResponse } from './user-attendance-response.type'
+import { UserInterestResponse } from './user-interest-response.type'
 
 export type UserResponse = {
   id: string

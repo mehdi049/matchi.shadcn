@@ -1,6 +1,6 @@
 import { MESSAGES } from '@/const/message'
 import prisma from '@/lib/prisma'
-import { ApiResponse } from '@/types/apiResponse'
+import { ApiResponse } from '@/types/api-response.type'
 import { StatusCodes } from 'http-status-codes'
 import { NextResponse } from 'next/server'
 

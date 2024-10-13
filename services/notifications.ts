@@ -1,6 +1,6 @@
 import { API_ROUTES } from '@/const/api-routes'
 import { fetcher, fetcherGet } from '@/lib/fetcher'
-import { NotificationResponse } from '@/types/NotificationResponse'
+import { NotificationResponse } from '@/types/notification-response.type'
 
 export const getNotificationsByUserId = (id: string) => {
   return fetcherGet<NotificationResponse[]>({

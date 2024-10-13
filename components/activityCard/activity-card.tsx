@@ -51,7 +51,7 @@ export default function ActivityCard(/*{
 
         <p className="text-sm pt-2 flex gap-2 items-center">
           <FontAwesome icon={faCalendar} className="h-4 w-4 opacity-50" /> Lundi
-          17 mars - 17h
+          17 mars : 17-19h
         </p>
         <p className="text-sm flex gap-2 items-center">
           <FontAwesome icon={faCompass} className="h-4 w-4 opacity-50" /> Tunis,

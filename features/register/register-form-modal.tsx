@@ -1,6 +1,6 @@
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
+import { Button } from '@/components/ui/button'
+import { Input } from '@/components/ui/input'
+import { Label } from '@/components/ui/label'
 import {
   Dialog,
   DialogContent,
@@ -8,11 +8,13 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog";
-import { RegisterFormModalProps } from "./register-form-modal.type.ts.jsx";
+} from '@/components/ui/dialog'
+import { RegisterFormModalProps } from './register-form-modal.type.ts.jsx'
+import FontAwesome from '@/components/ui/font-awesome/font-awesome'
+import { faFacebook, faGoogle } from '@fortawesome/free-brands-svg-icons'
 
 export function RegisterFormModal({
-  buttonVariant = "ghost",
+  buttonVariant = 'ghost',
   className,
 }: RegisterFormModalProps) {
   return (
@@ -60,14 +62,32 @@ export function RegisterFormModal({
           <Button type="submit" className="w-full">
             Confirmer
           </Button>
-          <Button variant="outline" className="w-full">
-            Continuer avec Google
-          </Button>
-          <Button variant="outline" className="w-full">
-            Continuer avec Facebook
-          </Button>
+
+          <div className="relative py-2 md:py-4">
+            <div className="absolute inset-0 flex items-center">
+              <span className="w-full border-t" />
+            </div>
+            <div className="relative flex justify-center text-xs uppercase">
+              <span className="bg-background px-2 text-muted-foreground">
+                Ou continuer avec
+              </span>
+            </div>
+          </div>
+
+          <div className="flex flex-col gap-2">
+            <Button variant="outline" className="w-full">
+              <p className="w-28 flex gap-2 items-center">
+                <FontAwesome icon={faGoogle} className="h-3 w-3" /> Google
+              </p>
+            </Button>
+            <Button variant="outline" className="w-full">
+              <p className="w-28 flex gap-2 items-center">
+                <FontAwesome icon={faFacebook} className="h-3 w-3" /> Facebook
+              </p>
+            </Button>
+          </div>
         </div>
       </DialogContent>
     </Dialog>
-  );
+  )
 }

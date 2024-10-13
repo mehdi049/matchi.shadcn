@@ -1,6 +1,6 @@
 import { API_ROUTES } from '@/const/api-routes'
 import { fetcherGet } from '@/lib/fetcher'
-import { ActivityResponse } from '@/types/ActivityResponse'
+import { ActivityResponse } from '@/types/activity-response.type'
 
 export const getInterests = () => {
   return fetcherGet<ActivityResponse[]>({

@@ -1,4 +1,4 @@
-import { ApiResponse } from '@/types/apiResponse'
+import { ApiResponse } from '@/types/api-response.type'
 
 type fetcherProps = {
   method: 'POST' | 'PUT' | 'DELETE'

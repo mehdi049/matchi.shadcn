@@ -1,8 +1,8 @@
 import {
   AddedActivityResponse,
   AddedActivityResponseSm,
-} from '@/types/AddedActivityResponse'
-import { UserAttendanceRequestStatus } from '@/types/UserAttendanceResponse'
+} from '@/types/added-activity-response.type'
+import { UserAttendanceRequestStatus } from '@/types/user-attendance-response.type'
 
 export type ActivityCardProps = {
   activity?: AddedActivityResponseSm | AddedActivityResponse

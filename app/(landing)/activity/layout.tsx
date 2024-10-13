@@ -7,9 +7,7 @@ export default function ActivityDetailsLayout({
 }>) {
   return (
     <Container className="mt-8">
-      <div className="flex flex-wrap md:flex-nowrap gap-12 lg:gap-24">
-        {children}
-      </div>
+      <div className="flex flex-wrap md:flex-nowrap gap-12">{children}</div>
     </Container>
   )
 }

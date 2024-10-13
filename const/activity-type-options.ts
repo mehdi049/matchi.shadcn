@@ -1,4 +1,4 @@
-import { ADDED_ACTIVITY_TYPE } from '@/types/AddedActivityResponse'
+import { ADDED_ACTIVITY_TYPE } from '@/types/added-activity-response.type'
 
 export const ACTIVITY_TYPE_OPTIONS = [
   {

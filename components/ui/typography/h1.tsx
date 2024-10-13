@@ -1,7 +1,9 @@
-import { TypographyProps } from "./typography.type";
+import { TypographyProps } from './typography.type'
 
 export default function H1({ children, className }: TypographyProps) {
   return (
-    <h1 className={"text-2xl font-bold " + (className ?? "")}>{children}</h1>
-  );
+    <h1 className={'text-xl md:text-2xl font-medium ' + (className ?? '')}>
+      {children}
+    </h1>
+  )
 }

@@ -1,6 +1,6 @@
 import prisma from '@/lib/prisma'
-import { UserResponse } from '@/types/User'
-import { ApiResponse } from '@/types/apiResponse'
+import { UserResponse } from '@/types/user-response.type'
+import { ApiResponse } from '@/types/api-response.type'
 import { StatusCodes } from 'http-status-codes'
 import { NextResponse } from 'next/server'
 

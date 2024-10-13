@@ -1,7 +1,9 @@
 import { API_ROUTES } from '@/const/api-routes'
 import { fetcher } from '@/lib/fetcher'
-import { UserAttendanceRequestStatus } from '@/types/UserAttendanceResponse'
-import { UserAttendanceResponse } from '@/types/UserInterestResponse'
+import {
+  UserAttendanceRequestStatus,
+  UserAttendanceResponse,
+} from '@/types/user-attendance-response.type'
 
 export const addAttendance = (attendance: UserAttendanceResponse) => {
   return fetcher<string>({

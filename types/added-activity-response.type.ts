@@ -1,5 +1,5 @@
-import { ActivityResponse } from './ActivityResponse'
-import { UserResponseSm } from './User'
+import { ActivityResponse } from './activity-response.type'
+import { UserResponseSm } from './user-response.type'
 
 type AddedActivityResponseAttendee = {
   user: UserResponseSm

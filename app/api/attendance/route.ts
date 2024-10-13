@@ -1,8 +1,8 @@
 import { MESSAGES } from '@/const/message'
 import prisma from '@/lib/prisma'
-import { ADDED_ACTIVITY_TYPE } from '@/types/AddedActivityResponse'
-import { ApiResponse } from '@/types/apiResponse'
-import { ATTENDANCE_STATUS } from '@/types/UserAttendanceResponse'
+import { ADDED_ACTIVITY_TYPE } from '@/types/added-activity-response.type'
+import { ApiResponse } from '@/types/api-response.type'
+import { ATTENDANCE_STATUS } from '@/types/user-attendance-response.type'
 import { StatusCodes } from 'http-status-codes'
 import { NextResponse } from 'next/server'
 

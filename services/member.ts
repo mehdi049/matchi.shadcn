@@ -1,6 +1,6 @@
 import { fetcher, fetcherGet } from '@/lib/fetcher'
 import { API_ROUTES } from '@/const/api-routes'
-import { UserResponse } from '@/types/User'
+import { UserResponse } from '@/types/user-response.type'
 
 export const getUserById = (id: string) => {
   return fetcherGet<UserResponse>({

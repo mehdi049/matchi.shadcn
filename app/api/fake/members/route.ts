@@ -1,11 +1,11 @@
 import { MESSAGES } from '@/const/message'
 import prisma from '@/lib/prisma'
-import { ApiResponse } from '@/types/apiResponse'
+import { ApiResponse } from '@/types/api-response.type'
 import { faker } from '@faker-js/faker'
 import { StatusCodes } from 'http-status-codes'
 import { NextResponse } from 'next/server'
 import cities from '../../../../data/cities.json'
-import { ADDED_ACTIVITY_TYPE } from '@/types/AddedActivityResponse'
+import { ADDED_ACTIVITY_TYPE } from '@/types/added-activity-response.type'
 import {
   capitalizeFirstLetter,
   hashPassword,
