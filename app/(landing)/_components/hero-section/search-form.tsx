@@ -32,8 +32,10 @@ import {
   SelectTrigger,
 } from '@/components/ui/select'
 import { MESSAGES } from '@/const/message'
-//import { useRouter } from 'next/navigation'
+import { useRouter } from 'next/navigation'
 import FontAwesome from '@/components/ui/font-awesome/font-awesome'
+import { slugifyString } from '@/lib/string'
+import { ROUTES } from '@/routes'
 
 const formSchema = z.object({
   activity: z.string({
@@ -45,13 +47,17 @@ const formSchema = z.object({
   date: z.date().optional(),
 })
 
-export function SearchForm() {
-  //const router = useRouter()
+export type searchFormProps = {
+  design?: 'card' | 'simple'
+  className?: string
+}
+export function SearchForm({ design = 'card', className }: searchFormProps) {
+  const router = useRouter()
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
   })
 
-  function onSubmit(/*formData: z.infer<typeof formSchema>*/) {
+  function onSubmit(formData: z.infer<typeof formSchema>) {
     /*return router.push(
       ROUTES.ACTIVITIES_SEARCH(
         formData.city ? (slugifyString(formData.city) as string) : 'all',
@@ -63,126 +69,146 @@ export function SearchForm() {
         slugifyString(formData.date?.toString())
       )
     )*/
+    return router.push(
+      ROUTES.ACTIVITIES_SEARCH(
+        formData.city ? (slugifyString(formData.city) as string) : 'all',
+        'Padel',
+        slugifyString(formData.date?.toString())
+      )
+    )
+  }
+
+  const SearchFormContent = () => {
+    return (
+      <Form {...form}>
+        <form
+          onSubmit={form.handleSubmit(onSubmit)}
+          className={`flex flex-col md:flex-row gap-4 items-end ${className}`}
+        >
+          <FormField
+            control={form.control}
+            name="activity"
+            render={({ field }) => (
+              <FormItem className="w-full md:w-auto">
+                <FormLabel>
+                  Activité * <FormMessage className="text-xs" />
+                </FormLabel>
+                <Select
+                  onValueChange={field.onChange}
+                  defaultValue={field.value}
+                >
+                  <FormControl>
+                    <SelectTrigger>
+                      <SelectValue placeholder="Choisir une activité" />
+                    </SelectTrigger>
+                  </FormControl>
+                  <SelectContent>
+                    <SelectItem value="m@example.com">m@example.com</SelectItem>
+                    <SelectItem value="m@google.com">m@google.com</SelectItem>
+                    <SelectItem value="m@support.com">m@support.com</SelectItem>
+                  </SelectContent>
+                </Select>
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
+            name="city"
+            render={({ field }) => (
+              <FormItem className="w-full md:w-auto">
+                <FormLabel>
+                  Cité * <FormMessage className="text-xs" />
+                </FormLabel>
+                <Select
+                  onValueChange={field.onChange}
+                  defaultValue={field.value}
+                >
+                  <FormControl>
+                    <SelectTrigger>
+                      <SelectValue placeholder="Choisir une ville" />
+                    </SelectTrigger>
+                  </FormControl>
+                  <SelectContent>
+                    <SelectItem value="m@example.com">m@example.com</SelectItem>
+                    <SelectItem value="m@google.com">m@google.com</SelectItem>
+                    <SelectItem value="m@support.com">m@support.com</SelectItem>
+                  </SelectContent>
+                </Select>
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
+            name="date"
+            render={({ field }) => (
+              <FormItem className="flex flex-col w-full md:w-auto">
+                <FormLabel>Date</FormLabel>
+                <Popover>
+                  <PopoverTrigger asChild>
+                    <FormControl>
+                      <Button
+                        variant={'outline'}
+                        className={cn(
+                          'w-[240px] pl-3 text-left font-normal',
+                          !field.value && 'text-muted-foreground'
+                        )}
+                      >
+                        {field.value ? (
+                          format(field.value, 'PPP')
+                        ) : (
+                          <span>Choisir une date</span>
+                        )}
+                        <FontAwesome
+                          icon={faCalendar}
+                          className="ml-auto h-4 w-4 opacity-50"
+                        />
+                      </Button>
+                    </FormControl>
+                  </PopoverTrigger>
+                  <PopoverContent className="w-auto p-0" align="start">
+                    <Calendar
+                      mode="single"
+                      selected={field.value}
+                      onSelect={field.onChange}
+                      disabled={(date) =>
+                        date < new Date() || date < new Date('1900-01-01')
+                      }
+                      initialFocus
+                    />
+                  </PopoverContent>
+                </Popover>
+              </FormItem>
+            )}
+          />
+          <Button type="submit" className="w-full md:w-auto">
+            Rechercher
+          </Button>
+        </form>
+      </Form>
+    )
   }
 
   return (
+    <>
+      {design === 'card' ? (
+        <CardWrapper>
+          <SearchFormContent />
+        </CardWrapper>
+      ) : (
+        <SearchFormContent />
+      )}
+    </>
+  )
+}
+
+type cardWrapperProps = {
+  children: React.ReactNode
+}
+const CardWrapper = ({ children }: cardWrapperProps) => {
+  return (
     <Card>
       <CardHeader></CardHeader>
-      <CardContent className="-mt-6">
-        <Form {...form}>
-          <form
-            onSubmit={form.handleSubmit(onSubmit)}
-            className="flex flex-col md:flex-row gap-4 justify-center items-end"
-          >
-            <FormField
-              control={form.control}
-              name="activity"
-              render={({ field }) => (
-                <FormItem className="w-full md:w-auto">
-                  <FormLabel>
-                    Activité * <FormMessage className="text-xs" />
-                  </FormLabel>
-                  <Select
-                    onValueChange={field.onChange}
-                    defaultValue={field.value}
-                  >
-                    <FormControl>
-                      <SelectTrigger>
-                        <SelectValue placeholder="Choisir une activité" />
-                      </SelectTrigger>
-                    </FormControl>
-                    <SelectContent>
-                      <SelectItem value="m@example.com">
-                        m@example.com
-                      </SelectItem>
-                      <SelectItem value="m@google.com">m@google.com</SelectItem>
-                      <SelectItem value="m@support.com">
-                        m@support.com
-                      </SelectItem>
-                    </SelectContent>
-                  </Select>
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
-              name="city"
-              render={({ field }) => (
-                <FormItem className="w-full md:w-auto">
-                  <FormLabel>
-                    Cité * <FormMessage className="text-xs" />
-                  </FormLabel>
-                  <Select
-                    onValueChange={field.onChange}
-                    defaultValue={field.value}
-                  >
-                    <FormControl>
-                      <SelectTrigger>
-                        <SelectValue placeholder="Choisir une ville" />
-                      </SelectTrigger>
-                    </FormControl>
-                    <SelectContent>
-                      <SelectItem value="m@example.com">
-                        m@example.com
-                      </SelectItem>
-                      <SelectItem value="m@google.com">m@google.com</SelectItem>
-                      <SelectItem value="m@support.com">
-                        m@support.com
-                      </SelectItem>
-                    </SelectContent>
-                  </Select>
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
-              name="date"
-              render={({ field }) => (
-                <FormItem className="flex flex-col w-full md:w-auto">
-                  <FormLabel>Date</FormLabel>
-                  <Popover>
-                    <PopoverTrigger asChild>
-                      <FormControl>
-                        <Button
-                          variant={'outline'}
-                          className={cn(
-                            'w-[240px] pl-3 text-left font-normal',
-                            !field.value && 'text-muted-foreground'
-                          )}
-                        >
-                          {field.value ? (
-                            format(field.value, 'PPP')
-                          ) : (
-                            <span>Choisir une date</span>
-                          )}
-                          <FontAwesome
-                            icon={faCalendar}
-                            className="ml-auto h-4 w-4 opacity-50"
-                          />
-                        </Button>
-                      </FormControl>
-                    </PopoverTrigger>
-                    <PopoverContent className="w-auto p-0" align="start">
-                      <Calendar
-                        mode="single"
-                        selected={field.value}
-                        onSelect={field.onChange}
-                        disabled={(date) =>
-                          date < new Date() || date < new Date('1900-01-01')
-                        }
-                        initialFocus
-                      />
-                    </PopoverContent>
-                  </Popover>
-                </FormItem>
-              )}
-            />
-            <Button type="submit" className="w-full md:w-auto">
-              Rechercher
-            </Button>
-          </form>
-        </Form>
-      </CardContent>
+      <CardContent className="-mt-6 border-none">{children}</CardContent>
     </Card>
   )
 }

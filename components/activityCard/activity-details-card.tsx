@@ -3,7 +3,6 @@ import { AvatarComponent } from '@/components/ui/avatar'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card'
 import FontAwesome from '@/components/ui/font-awesome/font-awesome'
-import H1 from '@/components/ui/typography/h1'
 import H2 from '@/components/ui/typography/h2'
 import {
   faCalendar,
@@ -13,6 +12,7 @@ import {
 } from '@fortawesome/free-regular-svg-icons'
 import Image from 'next/image'
 import Link from 'next/link'
+import H4 from '../ui/typography/h4'
 
 export default function ActivityDetailsCard() {
   return (
@@ -50,7 +50,7 @@ export default function ActivityDetailsCard() {
           </div>
 
           <div>
-            <H1>Sidi Bouzid, acidus adeptio repellat</H1>
+            <H2>Sidi Bouzid, acidus adeptio repellat</H2>
             <div className="flex flex-col gap-2">
               <p className="text-sm pt-2 flex gap-2 items-center">
                 <FontAwesome icon={faCalendar} className="h-4 w-4 opacity-50" />{' '}
@@ -81,7 +81,7 @@ export default function ActivityDetailsCard() {
           </div>
         </div>
 
-        <H2 className="mt-4 font-medium">Plus de detail</H2>
+        <H4 className="mt-4 md:mt-8">Plus de detail</H4>
         <p className="mt-2">
           cui tremo curtus urbs creptio delinquo quae absum sunt abeo talio
           decet viduo architecto audeo conicio vinitor antepono triduana usus

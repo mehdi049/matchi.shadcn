@@ -6,7 +6,7 @@ export const ROUTES = {
     city: string,
     activity: string = 'all',
     date: string = ''
-  ) => '/activities/' + city + '/' + activity + '/' + date,
+  ) => '/search/' + city + '/' + activity + '/' + date,
 
   PROFILE: (id: string) => '/profiles/' + id,
   PROFILES: '/profiles',
