@@ -15,7 +15,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="antialiased">
-        {children}
+        <main className="flex flex-col gap-4 justify-between">{children}</main>
         <Toaster position="top-right" closeButton />
       </body>
     </html>

@@ -29,7 +29,7 @@ export default function ActivityDetailsCard() {
               <p className="text-xs text-muted-foreground">Organisateur</p>
             </div>
           </div>
-          <div className="flex gap-2 items-center">
+          <div className="flex flex-wrap gap-2 items-center">
             <Button size={'sm'}>Rejoindre</Button>
             <PrivateActivityBadge />
           </div>

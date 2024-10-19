@@ -1,3 +1,5 @@
+'use client'
+
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
@@ -12,11 +14,15 @@ import {
 import { RegisterFormModalProps } from './register-form-modal.type.ts.jsx'
 import FontAwesome from '@/components/ui/font-awesome/font-awesome'
 import { faFacebook, faGoogle } from '@fortawesome/free-brands-svg-icons'
+import { redirect, useRouter } from 'next/navigation'
+import { ROUTES } from '@/routes'
 
 export function RegisterFormModal({
   buttonVariant = 'ghost',
   className,
 }: RegisterFormModalProps) {
+  const router = useRouter()
+
   return (
     <Dialog>
       <DialogTrigger asChild>
@@ -59,7 +65,11 @@ export function RegisterFormModal({
             <Input id="password" type="password" required />
           </div>
 
-          <Button type="submit" className="w-full">
+          <Button
+            type="submit"
+            className="w-full"
+            onClick={() => router.push(ROUTES.MEMBER.COMPLETE_PROFILE)}
+          >
             Confirmer
           </Button>
 
@@ -69,20 +79,30 @@ export function RegisterFormModal({
             </div>
             <div className="relative flex justify-center text-xs uppercase">
               <span className="bg-background px-2 text-muted-foreground">
-                Ou continuer avec
+                Ou
               </span>
             </div>
           </div>
 
           <div className="flex flex-col gap-2">
-            <Button variant="outline" className="w-full">
-              <p className="w-28 flex gap-2 items-center">
-                <FontAwesome icon={faGoogle} className="h-3 w-3" /> Google
+            <Button
+              variant="outline"
+              className="w-full"
+              onClick={() => router.push(ROUTES.MEMBER.COMPLETE_PROFILE)}
+            >
+              <p className="flex gap-2 items-center">
+                <FontAwesome icon={faGoogle} className="h-3 w-3" /> Continuer
+                avec Google
               </p>
             </Button>
-            <Button variant="outline" className="w-full">
-              <p className="w-28 flex gap-2 items-center">
-                <FontAwesome icon={faFacebook} className="h-3 w-3" /> Facebook
+            <Button
+              variant="outline"
+              className="w-full"
+              onClick={() => redirect(ROUTES.MEMBER.COMPLETE_PROFILE)}
+            >
+              <p className="flex gap-2 items-center">
+                <FontAwesome icon={faFacebook} className="h-3 w-3" /> Continuer
+                avec Facebook
               </p>
             </Button>
           </div>

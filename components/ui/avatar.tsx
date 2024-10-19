@@ -59,7 +59,7 @@ const AvatarComponent = ({
 }: AvatarComponentProps) => {
   return (
     <Avatar className={className}>
-      <AvatarImage src={src} alt={fallback ?? ''} />
+      <AvatarImage src={src} alt={fallback ?? ''} className="object-cover" />
       {fallback && <AvatarFallback>{fallback}</AvatarFallback>}
     </Avatar>
   )

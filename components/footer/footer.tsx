@@ -10,7 +10,7 @@ import { RegisterFormModal } from '@/features/register/register-form-modal'
 export default function Footer() {
   const currentDate = new Date()
   return (
-    <footer className="bg-black py-8 mt-8">
+    <footer className="bg-black py-8">
       <Container className="flex flex-wrap flex-col gap-4 sm:gap-8">
         <div className="flex flex-wrap gap-4 justify-between">
           <div className="flex flex-col gap-3">

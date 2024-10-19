@@ -8,7 +8,7 @@ import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 
 import { cn } from '@/lib/utils'
-import { Button } from '@/components/ui/button'
+import { Button, CalendarButton } from '@/components/ui/button'
 import { Calendar } from '@/components/ui/calendar'
 import {
   Form,
@@ -47,6 +47,11 @@ const formSchema = z.object({
   date: z.date().optional(),
 })
 
+type cardWrapperProps = {
+  children: React.ReactNode
+  className?: string
+}
+
 export type searchFormProps = {
   design?: 'card' | 'simple'
   className?: string
@@ -78,12 +83,21 @@ export function SearchForm({ design = 'card', className }: searchFormProps) {
     )
   }
 
+  const CardWrapper = ({ children }: cardWrapperProps) => {
+    return (
+      <Card className={className}>
+        <CardHeader></CardHeader>
+        <CardContent className="-mt-6 border-none">{children}</CardContent>
+      </Card>
+    )
+  }
+
   const SearchFormContent = () => {
     return (
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(onSubmit)}
-          className={`flex flex-col md:flex-row gap-4 items-end ${className}`}
+          className={`flex flex-col md:flex-row gap-4 items-end relative ${className}`}
         >
           <FormField
             control={form.control}
@@ -146,10 +160,10 @@ export function SearchForm({ design = 'card', className }: searchFormProps) {
                 <Popover>
                   <PopoverTrigger asChild>
                     <FormControl>
-                      <Button
+                      <CalendarButton
                         variant={'outline'}
                         className={cn(
-                          'w-[240px] pl-3 text-left font-normal',
+                          'pl-3 text-left font-normal',
                           !field.value && 'text-muted-foreground'
                         )}
                       >
@@ -160,9 +174,9 @@ export function SearchForm({ design = 'card', className }: searchFormProps) {
                         )}
                         <FontAwesome
                           icon={faCalendar}
-                          className="ml-auto h-4 w-4 opacity-50"
+                          className="ml-2 h-4 w-4 opacity-50"
                         />
-                      </Button>
+                      </CalendarButton>
                     </FormControl>
                   </PopoverTrigger>
                   <PopoverContent className="w-auto p-0" align="start">
@@ -198,17 +212,5 @@ export function SearchForm({ design = 'card', className }: searchFormProps) {
         <SearchFormContent />
       )}
     </>
-  )
-}
-
-type cardWrapperProps = {
-  children: React.ReactNode
-}
-const CardWrapper = ({ children }: cardWrapperProps) => {
-  return (
-    <Card>
-      <CardHeader></CardHeader>
-      <CardContent className="-mt-6 border-none">{children}</CardContent>
-    </Card>
   )
 }

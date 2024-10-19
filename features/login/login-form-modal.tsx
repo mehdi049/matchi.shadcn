@@ -1,3 +1,5 @@
+'use client'
+
 import Link from 'next/link'
 
 import { Button } from '@/components/ui/button'
@@ -15,11 +17,15 @@ import { LoginFormModalProps } from './login-form-modal.type.ts'
 import { RegisterFormModal } from '../register/register-form-modal'
 import FontAwesome from '@/components/ui/font-awesome/font-awesome'
 import { faFacebook, faGoogle } from '@fortawesome/free-brands-svg-icons'
+import { useRouter } from 'next/navigation'
+import { ROUTES } from '@/routes'
 
 export function LoginFormModal({
   buttonVariant = 'ghost',
   className,
 }: LoginFormModalProps) {
+  const router = useRouter()
+
   return (
     <Dialog>
       <DialogTrigger asChild>
@@ -53,7 +59,11 @@ export function LoginFormModal({
             </div>
             <Input id="password" type="password" required />
           </div>
-          <Button type="submit" className="w-full">
+          <Button
+            type="submit"
+            className="w-full"
+            onClick={() => router.push(ROUTES.MEMBER.COMPLETE_PROFILE)}
+          >
             Me connecter
           </Button>
           <div className="relative py-2 md:py-4">
@@ -62,19 +72,29 @@ export function LoginFormModal({
             </div>
             <div className="relative flex justify-center text-xs uppercase">
               <span className="bg-background px-2 text-muted-foreground">
-                Ou continuer avec
+                Ou
               </span>
             </div>
           </div>
           <div className="flex flex-col gap-2">
-            <Button variant="outline" className="w-full">
-              <p className="w-28 flex gap-2 items-center">
-                <FontAwesome icon={faGoogle} className="h-3 w-3" /> Google
+            <Button
+              variant="outline"
+              className="w-full"
+              onClick={() => router.push(ROUTES.MEMBER.COMPLETE_PROFILE)}
+            >
+              <p className="flex gap-2 items-center">
+                <FontAwesome icon={faGoogle} className="h-3 w-3" /> Contiuner
+                avec Google
               </p>
             </Button>
-            <Button variant="outline" className="w-full">
-              <p className="w-28 flex gap-2 items-center">
-                <FontAwesome icon={faFacebook} className="h-3 w-3" /> Facebook
+            <Button
+              variant="outline"
+              className="w-full"
+              onClick={() => router.push(ROUTES.MEMBER.COMPLETE_PROFILE)}
+            >
+              <p className="flex gap-2 items-center">
+                <FontAwesome icon={faFacebook} className="h-3 w-3" /> Continuer
+                avec Facebook
               </p>
             </Button>
           </div>

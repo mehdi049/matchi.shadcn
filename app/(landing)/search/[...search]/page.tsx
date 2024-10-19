@@ -1,6 +1,6 @@
 import ActivityCard from '@/components/activityCard/activity-card'
 import Container from '@/components/ui/container/container'
-import { SearchForm } from '../../_components/hero-section/search-form'
+import { SearchForm } from '../../../../features/search-form/search-form'
 import H4 from '@/components/ui/typography/h4'
 
 export default function SearchActivities(/*{

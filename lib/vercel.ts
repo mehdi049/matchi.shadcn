@@ -30,7 +30,7 @@ const validateImage = (file: File) => {
     )
 }
 
-export const uploadMediaImage = async (file: File) => {
+export const uploadMediaImageToVerceStorage = async (file: File) => {
   validateImage(file)
 
   try {
