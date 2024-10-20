@@ -55,7 +55,7 @@ export default function InterestsForm({ setStep }: StepProps) {
 
       setStep(4)
       setTimeout(() => {
-        // router.push(ROUTES.MEMBER.PROFILE)
+        router.push(ROUTES.MEMBER.PROFILE)
       }, 1000)
     } else toast.error('Veuillez sélectionner au moins une activité.')
   }

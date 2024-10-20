@@ -8,7 +8,7 @@ import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 
 import { cn } from '@/lib/utils'
-import { Button, CalendarButton } from '@/components/ui/button'
+import { Button, CnButton } from '@/components/ui/button'
 import { Calendar } from '@/components/ui/calendar'
 import {
   Form,
@@ -160,7 +160,7 @@ export function SearchForm({ design = 'card', className }: searchFormProps) {
                 <Popover>
                   <PopoverTrigger asChild>
                     <FormControl>
-                      <CalendarButton
+                      <CnButton
                         variant={'outline'}
                         className={cn(
                           'pl-3 text-left font-normal',
@@ -176,7 +176,7 @@ export function SearchForm({ design = 'card', className }: searchFormProps) {
                           icon={faCalendar}
                           className="ml-2 h-4 w-4 opacity-50"
                         />
-                      </CalendarButton>
+                      </CnButton>
                     </FormControl>
                   </PopoverTrigger>
                   <PopoverContent className="w-auto p-0" align="start">

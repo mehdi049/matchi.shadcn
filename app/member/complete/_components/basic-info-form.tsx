@@ -1,4 +1,4 @@
-import { Button, CalendarButton } from '@/components/ui/button'
+import { Button, CnButton } from '@/components/ui/button'
 import { StepProps } from './steps.types'
 import {
   Form,
@@ -82,7 +82,7 @@ export default function BasicInfoForm({ setStep }: StepProps) {
               </FormItem>
             )}
           />
-          x
+
           <FormField
             control={form.control}
             name="email"
@@ -106,10 +106,10 @@ export default function BasicInfoForm({ setStep }: StepProps) {
                 <Popover>
                   <PopoverTrigger asChild>
                     <FormControl>
-                      <CalendarButton
+                      <CnButton
                         variant={'outline'}
                         className={cn(
-                          'pl-3 text-left font-normal',
+                          'pl-3 text-left font-normal flex justify-between',
                           !field.value && 'text-muted-foreground'
                         )}
                       >
@@ -122,7 +122,7 @@ export default function BasicInfoForm({ setStep }: StepProps) {
                           icon={faCalendar}
                           className="ml-2 h-4 w-4 opacity-50"
                         />
-                      </CalendarButton>
+                      </CnButton>
                     </FormControl>
                   </PopoverTrigger>
                   <PopoverContent className="w-auto p-0" align="start">
