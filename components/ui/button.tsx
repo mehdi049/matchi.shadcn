@@ -3,9 +3,7 @@ import { Slot } from '@radix-ui/react-slot'
 import { cva, type VariantProps } from 'class-variance-authority'
 
 import { cn } from '@/lib/utils'
-import FontAwesome from './font-awesome/font-awesome'
-import { faSpinner } from '@fortawesome/free-solid-svg-icons'
-import { LoaderCircle } from 'lucide-react'
+import { Loader2 } from 'lucide-react'
 
 const buttonVariants = cva(
   'inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0',
@@ -68,7 +66,7 @@ const ButtonComponent = ({
   if (isLoading)
     return (
       <Button disabled={true} {...props}>
-        <LoaderCircle size={16} className="mr-2 animate-spin" />
+        <Loader2 size={16} className="mr-2 animate-spin" />
         {children}
       </Button>
     )

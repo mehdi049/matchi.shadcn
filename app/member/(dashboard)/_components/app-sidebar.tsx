@@ -14,15 +14,7 @@ import {
 } from 'lucide-react'
 
 import { NavMain } from '@/app/member/(dashboard)/_components/nav-main'
-import { NavUser } from '@/app/member/(dashboard)/_components/nav-user'
-import { LogoHeader } from '@/app/member/(dashboard)/_components/logo-header'
-import {
-  Sidebar,
-  SidebarContent,
-  SidebarFooter,
-  SidebarHeader,
-  SidebarRail,
-} from '@/components/ui/sidebar'
+import { Sidebar, SidebarContent, SidebarRail } from '@/components/ui/sidebar'
 import { NavAccount } from './nav-account'
 import { NavSignout } from './nav-signout'
 
@@ -118,18 +110,12 @@ const data = {
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
-    <Sidebar collapsible="icon" {...props}>
-      <SidebarHeader>
-        <LogoHeader />
-      </SidebarHeader>
+    <Sidebar collapsible="icon" {...props} className="pt-16">
       <SidebarContent>
         <NavMain items={data.navMain} />
         <NavAccount items={data.navAccount} />
         <NavSignout item={data.navLogout} />
       </SidebarContent>
-      <SidebarFooter>
-        <NavUser />
-      </SidebarFooter>
       <SidebarRail />
     </Sidebar>
   )
