@@ -17,14 +17,13 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from '@/components/ui/popover'
-import FontAwesome from '@/components/ui/font-awesome/font-awesome'
-import { faCalendar } from '@fortawesome/free-regular-svg-icons'
 import { Calendar } from '@/components/ui/calendar'
 import { format } from 'date-fns'
 import { cn } from '@/lib/utils'
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group'
 import UpdateProfilePicture from '@/features/update-profile-picture/update-profile-picture'
 import { MESSAGES } from '@/const/message'
+import { CalendarDays } from 'lucide-react'
 
 const formSchema = z.object({
   name: z.string({
@@ -118,10 +117,7 @@ export default function BasicInfoForm({ setStep }: StepProps) {
                         ) : (
                           <span>Choisir une date</span>
                         )}
-                        <FontAwesome
-                          icon={faCalendar}
-                          className="ml-2 h-4 w-4 opacity-50"
-                        />
+                        <CalendarDays className="ml-2 opacity-50" />
                       </CnButton>
                     </FormControl>
                   </PopoverTrigger>

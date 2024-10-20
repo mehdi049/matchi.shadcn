@@ -14,7 +14,7 @@ import {
 import { RegisterFormModalProps } from './register-form-modal.type.ts.jsx'
 import FontAwesome from '@/components/ui/font-awesome/font-awesome'
 import { faFacebook, faGoogle } from '@fortawesome/free-brands-svg-icons'
-import { redirect, useRouter } from 'next/navigation'
+import { useRouter } from 'next/navigation'
 import { ROUTES } from '@/routes'
 
 export function RegisterFormModal({
@@ -98,7 +98,7 @@ export function RegisterFormModal({
             <Button
               variant="outline"
               className="w-full"
-              onClick={() => redirect(ROUTES.MEMBER.COMPLETE_PROFILE)}
+              onClick={() => router.push(ROUTES.MEMBER.COMPLETE_PROFILE)}
             >
               <p className="flex gap-2 items-center">
                 <FontAwesome icon={faFacebook} className="h-3 w-3" /> Continuer

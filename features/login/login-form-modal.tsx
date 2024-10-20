@@ -19,6 +19,8 @@ import FontAwesome from '@/components/ui/font-awesome/font-awesome'
 import { faFacebook, faGoogle } from '@fortawesome/free-brands-svg-icons'
 import { useRouter } from 'next/navigation'
 import { ROUTES } from '@/routes'
+import { FaceIcon } from '@radix-ui/react-icons'
+import { Facebook } from 'lucide-react'
 
 export function LoginFormModal({
   buttonVariant = 'ghost',
@@ -83,8 +85,7 @@ export function LoginFormModal({
               onClick={() => router.push(ROUTES.MEMBER.COMPLETE_PROFILE)}
             >
               <p className="flex gap-2 items-center">
-                <FontAwesome icon={faGoogle} className="h-3 w-3" /> Contiuner
-                avec Google
+                <FontAwesome icon={faGoogle} /> Contiuner avec Google
               </p>
             </Button>
             <Button
@@ -93,8 +94,7 @@ export function LoginFormModal({
               onClick={() => router.push(ROUTES.MEMBER.COMPLETE_PROFILE)}
             >
               <p className="flex gap-2 items-center">
-                <FontAwesome icon={faFacebook} className="h-3 w-3" /> Continuer
-                avec Facebook
+                <Facebook size={12} /> Continuer avec Facebook
               </p>
             </Button>
           </div>

@@ -4,17 +4,11 @@ import { Card, CardContent, CardHeader } from '../ui/card'
 //import { ActivityCardProps } from './activity-card.type'
 import Image from 'next/image'
 import H3 from '../ui/typography/h3'
-import {
-  faCalendar,
-  faCircleCheck,
-  faCompass,
-  faMoneyBill1,
-} from '@fortawesome/free-regular-svg-icons'
-import FontAwesome from '../ui/font-awesome/font-awesome'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { ROUTES } from '@/routes'
 import PrivateActivityBadge from '../badge/private-activty-badge'
+import { CalendarClock, Coins, MapPin, UserRoundPlus } from 'lucide-react'
 
 export default function ActivityCard(/*{
   activity,
@@ -50,20 +44,18 @@ export default function ActivityCard(/*{
         </div>
 
         <p className="text-sm pt-2 flex gap-2 items-center">
-          <FontAwesome icon={faCalendar} className="h-4 w-4 opacity-50" /> Lundi
-          17 mars : 17-19h
+          <CalendarClock size={16} className="opacity-50" /> Lundi 17 mars :
+          17-19h
         </p>
         <p className="text-sm flex gap-2 items-center">
-          <FontAwesome icon={faCompass} className="h-4 w-4 opacity-50" /> Tunis,
-          Terrain Eddaleli
+          <MapPin size={16} className="opacity-50" /> Tunis, Terrain Eddaleli
         </p>
         <p className="text-sm flex gap-2 items-center">
-          <FontAwesome icon={faCircleCheck} className="h-4 w-4 opacity-50" /> 0
-          / 12 Participant(s)
+          <UserRoundPlus size={16} className="opacity-50" /> 0 / 12
+          Participant(s)
         </p>
         <p className="text-sm flex gap-2 items-center">
-          <FontAwesome icon={faMoneyBill1} className="h-4 w-4 opacity-50" />{' '}
-          Gratuit
+          <Coins size={16} className="opacity-50" /> Gratuit
         </p>
         <p className="text-xs">
           Organisé par{' '}

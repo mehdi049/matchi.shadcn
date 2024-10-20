@@ -8,10 +8,9 @@ import { useRouter } from 'next/navigation'
 import { useState } from 'react'
 import { UserInterestResponse } from '@/types/user-interest-response.type'
 import { toast } from 'sonner'
-import FontAwesome from '@/components/ui/font-awesome/font-awesome'
-import { faCircleCheck } from '@fortawesome/free-regular-svg-icons'
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { ROUTES } from '@/routes'
+import { CircleCheck } from 'lucide-react'
 
 export default function InterestsForm({ setStep }: StepProps) {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -82,7 +81,7 @@ export default function InterestsForm({ setStep }: StepProps) {
                   }
                   className="p-2"
                 >
-                  <FontAwesome icon={faCircleCheck} className="mr-1" /> Padel
+                  <CircleCheck className="mr-1 w-3 h-3" /> Padel
                 </Badge>
               ) : (
                 <Badge

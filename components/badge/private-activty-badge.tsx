@@ -1,6 +1,5 @@
-import { faLock } from '@fortawesome/free-solid-svg-icons'
 import { Badge } from '../ui/badge'
-import FontAwesome from '../ui/font-awesome/font-awesome'
+import { Lock } from 'lucide-react'
 
 export default function PrivateActivityBadge({
   className,
@@ -12,7 +11,7 @@ export default function PrivateActivityBadge({
       variant="secondary"
       className={`flex gap-2 items-center max-w-min ${className}`}
     >
-      <FontAwesome icon={faLock} /> Privé
+      <Lock size={12} /> Privé
     </Badge>
   )
 }
