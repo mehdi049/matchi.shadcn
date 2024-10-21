@@ -108,7 +108,7 @@ export default function BasicInfoForm({ setStep }: StepProps) {
                       <CnButton
                         variant={'outline'}
                         className={cn(
-                          'pl-3 text-left font-normal flex justify-between',
+                          'pl-3 font-normal justify-between',
                           !field.value && 'text-muted-foreground'
                         )}
                       >

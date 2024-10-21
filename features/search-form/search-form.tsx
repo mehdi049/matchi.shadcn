@@ -162,7 +162,7 @@ export function SearchForm({ design = 'card', className }: searchFormProps) {
                       <CnButton
                         variant={'outline'}
                         className={cn(
-                          'pl-3 text-left font-normal',
+                          'pl-3 font-normal justify-between',
                           !field.value && 'text-muted-foreground'
                         )}
                       >
@@ -190,6 +190,7 @@ export function SearchForm({ design = 'card', className }: searchFormProps) {
               </FormItem>
             )}
           />
+
           <Button type="submit" className="w-full md:w-auto">
             Rechercher
           </Button>

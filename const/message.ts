@@ -6,10 +6,12 @@ export const MESSAGES = {
     FORM: {
       REQUIRED: 'Champ obligatoir',
       INVALID_DATE: 'Date invalide',
+      INVALID_END_DATE: 'Date de fin invalide',
       INVALID_HOUR: 'Heure invalide',
       INVALID_HOUR_GT: 'La date de début doit être postérieure',
       INVALID_EMAIL: 'Email invalid',
       INVALID_LINK: 'Lien invalid',
+      INVALID_GOOGLE_LINK: 'Lien vers Google Maps invalid',
     },
   },
 }
