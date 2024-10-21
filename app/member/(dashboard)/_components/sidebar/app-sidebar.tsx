@@ -13,12 +13,11 @@ import {
   CircleUser,
 } from 'lucide-react'
 
-import { NavMain } from '@/app/member/(dashboard)/_components/nav-main'
+import { NavMain } from '@/app/member/(dashboard)/_components/sidebar/nav-main'
 import { Sidebar, SidebarContent, SidebarRail } from '@/components/ui/sidebar'
 import { NavAccount } from './nav-account'
 import { NavSignout } from './nav-signout'
 
-// This is sample data.
 const data = {
   navMain: [
     {

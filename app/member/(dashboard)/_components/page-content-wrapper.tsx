@@ -12,7 +12,7 @@ export default function PageContentWrapper({
 }: PageContentWrapperProps) {
   return (
     <>
-      <div className="sticky top-16">
+      <div className="sticky top-16 bg-white z-50 border-b border-gray-100 mb-4">
         <PageBreadcrumb pageParent={pageParent} pageName={pageName} />
       </div>
       <div className="flex flex-1 flex-col gap-4 p-4 pt-0">{children}</div>

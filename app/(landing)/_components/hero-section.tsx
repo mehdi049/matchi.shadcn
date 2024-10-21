@@ -1,4 +1,4 @@
-import { SearchForm } from '../../../../features/search-form/search-form'
+import { SearchForm } from '../../../features/search-form/search-form'
 
 export default function HeroSection() {
   return (

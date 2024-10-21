@@ -1,5 +1,5 @@
 import ActivityCard from '@/components/activityCard/activity-card'
-import HeroSection from './_components/hero-section/hero-section'
+import HeroSection from './_components/hero-section'
 import Container from '@/components/ui/container/container'
 import H1 from '@/components/ui/typography/h1'
 
