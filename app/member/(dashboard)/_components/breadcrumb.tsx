@@ -6,8 +6,8 @@ import {
   BreadcrumbSeparator,
   BreadcrumbPage,
 } from '@/components/ui/breadcrumb'
+import { Separator } from '@/components/ui/separator'
 import { SidebarTrigger } from '@/components/ui/sidebar'
-import { Separator } from '@radix-ui/react-separator'
 
 type PageBreadcrumbProps = {
   pageParent?: string
@@ -25,8 +25,13 @@ export default function PageBreadcrumb({
         <Breadcrumb>
           <BreadcrumbList>
             <BreadcrumbItem className="hidden md:block">
-              <BreadcrumbLink href="#">{pageParent}</BreadcrumbLink>
+              <BreadcrumbLink href="#">Dashboard</BreadcrumbLink>
             </BreadcrumbItem>
+            {pageParent && (
+              <BreadcrumbItem className="hidden md:block">
+                <BreadcrumbLink href="#">{pageParent}</BreadcrumbLink>
+              </BreadcrumbItem>
+            )}
             <BreadcrumbSeparator className="hidden md:block" />
             <BreadcrumbItem>
               <BreadcrumbPage>{pageName}</BreadcrumbPage>

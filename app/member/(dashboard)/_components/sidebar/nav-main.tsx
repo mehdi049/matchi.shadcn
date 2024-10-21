@@ -1,3 +1,5 @@
+'use client'
+
 import { ChevronRight, type LucideIcon } from 'lucide-react'
 
 import {
@@ -15,6 +17,7 @@ import {
   SidebarMenuSubButton,
   SidebarMenuSubItem,
 } from '@/components/ui/sidebar'
+import { useRouter } from 'next/navigation'
 
 export function NavMain({
   items,
@@ -30,6 +33,8 @@ export function NavMain({
     }[]
   }[]
 }) {
+  const router = useRouter()
+
   return (
     <SidebarGroup>
       <SidebarGroupLabel>Menu</SidebarGroupLabel>
@@ -43,7 +48,12 @@ export function NavMain({
           >
             <SidebarMenuItem>
               <CollapsibleTrigger asChild>
-                <SidebarMenuButton tooltip={item.title}>
+                <SidebarMenuButton
+                  tooltip={item.title}
+                  onClick={() =>
+                    item.url.length > 1 ? router.push(item.url) : {}
+                  }
+                >
                   {item.icon && <item.icon />}
                   <span>{item.title}</span>
                   {item.items && item.items?.length > 0 && (

@@ -12,7 +12,6 @@ export function NavSignout({
 }: {
   item: {
     title: string
-    url: string
     icon?: LucideIcon
   }
 }) {

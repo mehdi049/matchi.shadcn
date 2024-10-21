@@ -17,31 +17,32 @@ import { NavMain } from '@/app/member/(dashboard)/_components/sidebar/nav-main'
 import { Sidebar, SidebarContent, SidebarRail } from '@/components/ui/sidebar'
 import { NavAccount } from './nav-account'
 import { NavSignout } from './nav-signout'
+import { ROUTES } from '@/routes'
 
 const data = {
   navMain: [
     {
       title: 'Créer une activité',
-      url: '#',
+      url: ROUTES.MEMBER.ACTIVITY.ADD,
       icon: Plus,
       isActive: true,
     },
     {
       title: 'Mes activités',
-      url: '#',
+      url: ROUTES.MEMBER.ACTIVITIES.CREATED,
       icon: Heart,
       items: [
         {
           title: "Que j'ai crée",
-          url: '#',
+          url: ROUTES.MEMBER.ACTIVITIES.CREATED,
         },
         {
           title: 'Que je vais assister',
-          url: '#',
+          url: ROUTES.MEMBER.ACTIVITIES.GOING,
         },
         {
           title: 'Historique',
-          url: '#',
+          url: ROUTES.MEMBER.ACTIVITIES.HISTORY,
         },
       ],
     },
@@ -77,7 +78,7 @@ const data = {
     },
     {
       title: 'Messages',
-      url: '#',
+      url: ROUTES.MEMBER.MESSAGES,
       icon: Mail,
     },
     {
@@ -90,19 +91,18 @@ const data = {
   navAccount: [
     {
       title: 'Mon profile',
-      url: '#',
+      url: ROUTES.MEMBER.PROFILE,
       icon: UserRoundPen,
     },
     {
       title: 'Mon compte',
-      url: '#',
+      url: ROUTES.MEMBER.ACCOUNT,
       icon: CircleUser,
     },
   ],
 
   navLogout: {
     title: 'Me deconnecter',
-    url: '#',
     icon: LogOut,
   },
 }

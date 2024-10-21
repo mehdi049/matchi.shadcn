@@ -14,12 +14,18 @@ export const ROUTES = {
   MEMBER: {
     COMPLETE_PROFILE: '/member/complete',
     PROFILE: '/member/profile',
-    MY_ACTIVITIES: '/member/activities',
+    ACTIVITIES: {
+      CREATED: '/member/activities/created',
+      GOING: '/member/activities/going',
+      HISTORY: '/member/activities/history',
+    },
+    ACTIVITY: {
+      ADD: '/member/activity/add',
+      EDIT: (id: number) => '/member/activity/edit/' + id,
+    },
     MY_REQUESTS: '/member/requests',
     MY_REVIEWS: '/member/reviews',
     MESSAGES: '/member/messages',
     ACCOUNT: '/member/account',
-    ADD_ACTIVITY: '/member/activities/add',
-    EDIT_ACTIVITY: (id: number) => '/member/activities/edit/' + id,
   },
 }

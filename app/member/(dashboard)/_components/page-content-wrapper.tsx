@@ -7,7 +7,7 @@ type PageContentWrapperProps = {
 }
 export default function PageContentWrapper({
   children,
-  pageParent = 'Dashboard',
+  pageParent,
   pageName,
 }: PageContentWrapperProps) {
   return (

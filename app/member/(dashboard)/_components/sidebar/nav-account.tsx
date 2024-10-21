@@ -1,3 +1,4 @@
+'use client'
 import { type LucideIcon } from 'lucide-react'
 
 import { Collapsible, CollapsibleTrigger } from '@/components/ui/collapsible'
@@ -8,6 +9,7 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from '@/components/ui/sidebar'
+import { useRouter } from 'next/navigation'
 
 export function NavAccount({
   items,
@@ -19,6 +21,7 @@ export function NavAccount({
     isActive?: boolean
   }[]
 }) {
+  const router = useRouter()
   return (
     <SidebarGroup>
       <SidebarGroupLabel>Mon profile</SidebarGroupLabel>
@@ -32,7 +35,10 @@ export function NavAccount({
           >
             <SidebarMenuItem>
               <CollapsibleTrigger asChild>
-                <SidebarMenuButton tooltip={item.title}>
+                <SidebarMenuButton
+                  tooltip={item.title}
+                  onClick={() => router.push(item.url)}
+                >
                   {item.icon && <item.icon />}
                   <span>{item.title}</span>
                 </SidebarMenuButton>
